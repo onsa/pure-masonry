@@ -1,6 +1,6 @@
 {
   "name": "pure-masonry",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Masonry DOM effect with pure JavaScript",
   "main": "pureMasonry.js",
   "repository": "Onsa/pure-masonry",

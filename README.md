@@ -25,6 +25,7 @@ Add pureMasonry.min.css and pureMasonry.min.js to you project code.
 ```
 **2.**
 Add a container wall to your html body with bricks inside:
+(The container's size is under your control, feel free to make it absolute (px) or relative (vw, vh, %).)
 ```html
 <div ID="masonry-wall">
 	<div class="brick">

@@ -1,24 +1,21 @@
 'use strict';
 
-//	get container element
-var brickContainer = document.getElementById('masonry-wall');
-
 var build = function(options) {
 
 	//	get each brick
 	var bricks = [];
-	for (var brickIndex = 0; brickIndex < brickContainer.children.length; brickIndex++) {
-		var classNames = brickContainer.children[brickIndex].className.split(' ');
+	for (var brickIndex = 0; brickIndex < mason.brickContainer.children.length; brickIndex++) {
+		var classNames = mason.brickContainer.children[brickIndex].className.split(' ');
 		if (classNames.indexOf('brick') > -1) {
-			brickContainer.children[brickIndex].style.width = options.brickWidth + 'px';
-			bricks.push(brickContainer.children[brickIndex]);
+			mason.brickContainer.children[brickIndex].style.width = options.brickWidth + 'px';
+			bricks.push(mason.brickContainer.children[brickIndex]);
 		}
 	}
 
 	var grossWidth = options.brickWidth + options.horizontalGutter;
 
 	//	calculate the number of bricks in each row
-	var bricksPerRow = Math.floor(parseInt(brickContainer.clientWidth) / grossWidth);
+	var bricksPerRow = Math.floor(parseInt(mason.brickContainer.clientWidth) / grossWidth);
 
 	//	initialise array to keep track of column height
 	var columnHeight = Array(bricksPerRow).fill(0);
@@ -62,14 +59,14 @@ var build = function(options) {
 window.onresize = function() {
 	//	if masonry is not disabled
 	if (mason.options.underConstruction) {
-		var widthBefore = brickContainer.clientWidth;			//	get width before resizing
+		var widthBefore = mason.brickContainer.clientWidth;			//	get width before resizing
 		//	if already called within last second, reset timer
 		if (waitingForResize) {
 			clearTimeout(waitingForResize);
 		}
 		var waitingForResize = setTimeout(function() {
 			//	if container width has changed in the last second
-			if (widthBefore !== brickContainer.clientWidth) {
+			if (widthBefore !== mason.brickContainer.clientWidth) {
 				build(mason.options);
 			}
 		}, 1000);
@@ -87,6 +84,8 @@ var mason = {
 			verticalGutter:	verticalGutter,
 			underConstruction: true
 		};
+
+		this.brickContainer = document.getElementById('masonry-wall');
 
 		build(this.options);
 	}
