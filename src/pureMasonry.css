@@ -1,0 +1,13 @@
+#masonry-wall{
+    overflow:scroll;
+    position:relative
+}
+
+#masonry-wall>.brick{
+    transition:all 350ms ease-out;
+    position:absolute
+}
+
+#masonry-wall>.brick *{
+    max-width:100%
+}

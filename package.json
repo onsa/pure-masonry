@@ -1,0 +1,20 @@
+{
+  "name": "pure-masonry",
+  "version": "0.0.1",
+  "description": "Masonry DOM effect with pure JavaScript ",
+  "main": "pureMasonry.js",
+  "repository": "Onsa/pure-masonry",
+  "author": {
+    "name": "Onsa",
+    "url": "https://github.com/onsa"
+  },
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "masonry",
+    "pure JavaScript"
+  ],
+  "dependencies": {},
+  "devDependencies": {}
+}
