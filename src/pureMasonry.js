@@ -1,3 +1,5 @@
+'use strict';
+
 //	get container element
 var brickContainer = document.getElementById('masonry-wall');
 
